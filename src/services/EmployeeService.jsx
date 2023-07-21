@@ -8,3 +8,5 @@ class EmployeeService{
         return axios.get(REST_API)
     }
 }
+
+export default new EmployeeService();

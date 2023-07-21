@@ -1,10 +1,21 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 
 function ListEmployee() {
     const [employees, setEmployees] = useState([])
 
+    useEffect(() => {
+      
+        EmployeeService.getAllEmployees().then((response) =>{
+            setEmployees(response.data)
+            console.log(response.data);
+        }).catch(error => {
+            console.log(error)
+        })
+    }, [])
+    
   return (
     <div className='container'>
         <h2 className='text-center'>ListEmployee</h2>
@@ -25,7 +36,7 @@ function ListEmployee() {
                             <td> {employee.id} </td>
                             <td> {employee.firstName} </td>
                             <td> {employee.lastName} </td>
-                            <td> {employee.emailId} </td>
+                            <td> {employee.emailid} </td>
 
                         </tr>
                     )
