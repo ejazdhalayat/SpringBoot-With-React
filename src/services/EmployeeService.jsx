@@ -15,6 +15,10 @@ class EmployeeService{
     getEmployeeById(employeeId){
         return axios.get(REST_API + '/' + employeeId);
     }
+
+    updateEmployee(employeeId, employee){
+        return axios.get(REST_API + '/' +employeeId, employee)
+    }
 }
 
 export default new EmployeeService();
