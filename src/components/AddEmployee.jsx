@@ -12,7 +12,7 @@ function AddEmployee() {
     const navigate = useNavigate()
     const {id} = useParams();
 
-    const saveEmployee = (e) => {
+    const saveOrUpdateEmployee = (e) => {
         e.preventDefault();
 
         const employee = {firstName, lastName, emailid}
@@ -97,7 +97,7 @@ function AddEmployee() {
                            />
                            </div>
 
-                           <button className='btn btn-success' onClick = {(e) => saveEmployee(e)}>Submit</button>
+                           <button className='btn btn-success' onClick = {(e) => saveOrUpdateEmployee(e)}>Submit</button>
                            <Link to='/employees' className='btn btn-danger'>Cancel</Link>
 
                         </form>
