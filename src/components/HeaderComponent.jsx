@@ -3,7 +3,7 @@ import React from 'react'
 function HeaderComponent() {
   return (
     <div>
-        <heade>
+        <header>
             <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
                 <div>
                     <a href='' className='navbar-brand'>
@@ -12,7 +12,7 @@ function HeaderComponent() {
                 </div>
 
             </nav>
-        </heade>
+        </header>
     </div>
   )
 }

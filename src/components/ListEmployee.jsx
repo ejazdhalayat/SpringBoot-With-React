@@ -29,6 +29,7 @@ function ListEmployee() {
                 <th>Employee First Name</th>
                 <th>Employee Last Name</th>
                 <th>Employee Email ID</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 {
@@ -39,6 +40,9 @@ function ListEmployee() {
                             <td> {employee.firstName} </td>
                             <td> {employee.lastName} </td>
                             <td> {employee.emailid} </td>
+                            <td>
+                                <Link className='btn btn-info' to={`/edit-employee/>${employee.id}`}>Update</Link>
+                            </td>
 
                         </tr>
                     )
