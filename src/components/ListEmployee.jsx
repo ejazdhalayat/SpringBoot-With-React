@@ -41,7 +41,7 @@ function ListEmployee() {
                             <td> {employee.lastName} </td>
                             <td> {employee.emailid} </td>
                             <td>
-                                <Link className='btn btn-info' to={`/edit-employee/>${employee.id}`}>Update</Link>
+                                <Link className='btn btn-info' to={`/edit-employee/${employee.id}`}>Update</Link>
                             </td>
 
                         </tr>
