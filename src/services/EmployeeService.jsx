@@ -11,6 +11,10 @@ class EmployeeService{
     createEmployee(employee){
         return axios.post(REST_API, employee)   
     }
+
+    getEmployeeById(employeeId){
+        return axios.get(REST_API + '/' + employeeId);
+    }
 }
 
 export default new EmployeeService();
