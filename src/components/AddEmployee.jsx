@@ -17,17 +17,24 @@ function AddEmployee() {
 
         const employee = {firstName, lastName, emailid}
 
-        EmployeeService.createEmployee(employee).then((response) =>{
+        if(id){
+            EmployeeService.updateEmployee(employee).then((response) =>{
+                console.log(response.data)
+                navigate('/employees')
+            })
+
+        }else{
+            EmployeeService.createEmployee(employee).then((response) =>{
             
-            console.log(response.data)
-            navigate('/employees')
-            
+                console.log(response.data)
+                navigate('/employees')
+                 }).catch(error => {
+                console.log(error)
+                 })
 
-        }).catch(error => {
+        }
 
-            console.log(error)
-
-        })
+       
     }
 
         useEffect(() => {
