@@ -1,24 +1,23 @@
-import axios from 'axios'
+import axios from "axios";
 
-const REST_API = 'http://localhost:8080/api/v1/employees';
+const REST_API = "http://localhost:8080/api/v1/employees";
 
-class EmployeeService{
+class EmployeeService {
+  getAllEmployees() {
+    return axios.get(REST_API);
+  }
 
-    getAllEmployees(){
-        return axios.get(REST_API)
-    }
+  createEmployee(employee) {
+    return axios.post(REST_API, employee);
+  }
 
-    createEmployee(employee){
-        return axios.post(REST_API, employee)   
-    }
+  getEmployeeById(employeeId) {
+    return axios.get(REST_API + "/" + employeeId);
+  }
 
-    getEmployeeById(employeeId){
-        return axios.get(REST_API + '/' + employeeId);
-    }
-
-    updateEmployee(employeeId, employee){
-        return axios.get(REST_API + '/' +employeeId, employee)
-    }
+  updateEmployee(employeeId, employee) {
+    return axios.get(REST_API + "/" + employeeId, employee);
+  }
 }
 
 export default new EmployeeService();
