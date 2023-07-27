@@ -18,6 +18,10 @@ class EmployeeService {
   updateEmployee(employeeId, employee) {
     return axios.get(REST_API + "/" + employeeId, employee);
   }
+
+  deleteEmployee(employeeId){
+    return axios.delete(REST_API + '/' + employeeId)
+  }
 }
 
 export default new EmployeeService();
